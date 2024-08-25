@@ -82,6 +82,7 @@ export const getAppointments = async (req, res) => {
       .populate("patientId")
       .populate("donorId")
       .sort({ _id: -1 })
+      .limit(20)
       .exec();
 
     res.status(200).json({
