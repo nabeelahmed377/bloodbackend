@@ -24,6 +24,7 @@ const corsOptions = {
 // add middlewares
 app.use(express.json());
 app.use(cors(corsOptions));
+app.options("", cors(corsOptions));
 app.use(cookieParser());
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/patient", userRoute);
